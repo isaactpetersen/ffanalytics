@@ -1,0 +1,72 @@
+Package: ffanalytics
+Type: Package
+Title: Fantasy Football Analytics
+Version: 0.1.91
+Authors@R: c(person("Dennis", "Andersen", email = "andersen.dennis@live.com",
+                  role = c("aut", "cre")),
+              person("Isaac", "Petersen", email = "isaac@fantasyfootballanalytics.net",
+                  role = c("ctb")))
+Author: Dennis Andersen [aut, cre], Isaac Petersen [ctb]
+Maintainer: Dennis Andersen <andersen.dennis@live.com>
+Description: Scrape fantasy football projections from multiple sources and
+    calculate projected fantasy points for your drafts.
+License: GPL-3
+URL: http://fantasyfootballanalytics.net/
+LazyData: TRUE
+Depends:
+    shiny,
+    miniUI
+Imports:
+    data.table,
+    stringr,
+    DT,
+    XML,
+    httr,
+    tcltk,
+    RCurl,
+    Hmisc,
+    readxl,
+    RSelenium
+RoxygenNote: 5.0.1
+Collate:
+    'calcStdDev.R'
+    'calculatePoints.R'
+    'calculateRisk.R'
+    'calculationDataPrep.R'
+    'columnVariables.R'
+    'confidenceInterval.R'
+    'createObject.R'
+    'data.R'
+    'dataGadget.R'
+    'dataPeriod.R'
+    'dataResult.R'
+    'externalConstants.R'
+    'extractTeamNames.R'
+    'ffanalytics.R'
+    'getAdpAav.R'
+    'getAdpData.R'
+    'getPlayerData.R'
+    'getPlayerName.R'
+    'getProjections.R'
+    'getRanks.R'
+    'sourceSite.R'
+    'sourceAnalyst.R'
+    'sourceTable.R'
+    'getUrls.R'
+    'helperFunctions.R'
+    'internalConstants.R'
+    'leagueScoring.R'
+    'mflPlayers.R'
+    'nflPlayerData.R'
+    'projectPoints.R'
+    'projectionGadget.R'
+    'readUrl.R'
+    'retrieveData.R'
+    'runScrape.R'
+    'scoringUI.R'
+    'scrapeGadget.R'
+    'scrapeJQuery.R'
+    'scrapeJSONdata.R'
+    'tableMerge.R'
+    'tierFunction.R'
+    'yahooBasics.R'
