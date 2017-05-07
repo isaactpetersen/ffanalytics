@@ -236,6 +236,5 @@ readUrl <- function(inpUrl, columnTypes, columnNames, whichTable, removeRow,
       return(as.numeric(col))
     }), by = intersect(names(srcData), c("playerId", idVar, "player", "team",
                                          "position","passCompAtt"))]
-
   return(srcData)
 }

@@ -9,6 +9,7 @@
 #' @export nflTeam.abb
 #' @export nflTeam.id
 #' @export nflTeam.name
+#' @export nflTeam.city
 #' @format NULL
 position.name <- c("QB", "RB", "WR", "TE", "K", "DST", "DL", "LB", "DB")
 
@@ -24,7 +25,7 @@ yahooLeague <- 52880
 nflTeam.abb <- c("ARI", "ATL", "BAL", "BUF", "CAR", "CHI", "CIN", "CLE",
                  "DAL", "DEN", "DET", "GB",  "HOU", "IND", "JAC", "KC",
                  "MIA", "MIN", "NO",  "NE",  "NYG", "NYJ", "PHI", "PIT",
-                 "SD",  "SF",  "LA", "TB",  "TEN", "WAS", "SEA", "OAK")
+                 "LAR",  "SF",  "LAC", "TB",  "TEN", "WAS", "SEA", "OAK")
 
 nflTeam.id <- c(100026, 100001, 100002, 100003, 100004, 100005, 100006, 100007,
                 100008, 100009, 100010, 100011, 100013, 100014, 100015, 100016,
@@ -34,7 +35,7 @@ nflTeam.id <- c(100026, 100001, 100002, 100003, 100004, 100005, 100006, 100007,
 nflTeam.city <- c("Arizona",   "Atlanta",       "Baltimore",   "Buffalo",     "Carolina",  "Chicago",      "Cincinnati",   "Cleveland",
                   "Dallas",    "Denver",        "Detroit",     "Green Bay",   "Houston",   "Indianapolis", "Jacksonville", "Kansas City",
                   "Miami",     "Minnesota",     "New Orleans", "New England", "New York",  "New York",     "Philadelphia", "Pittsburgh",
-                  "San Diego", "San Francisco", "Los Angeles",    "Tampa Bay",  "Tennessee", "Washington",   "Seattle",      "Oakland")
+                  "Los Angeles", "San Francisco", "Los Angeles",    "Tampa Bay",  "Tennessee", "Washington",   "Seattle",      "Oakland")
 
 
 nflTeam.name <- c("Cardinals", "Falcons", "Ravens", "Bills",      "Panthers", "Bears",    "Bengals",  "Browns",

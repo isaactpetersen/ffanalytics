@@ -1,7 +1,7 @@
 #' @export extractTeam
 extractTeam <- function(teamInfo, siteName){
   teams <- vector(mode = "character", length = length(teamInfo))
-  nfl.teams <- c("WSH", "JAX", nflTeam.abb, "FA")
+  nfl.teams <- c("WSH", "JAX", nflTeam.abb, "FA", "LA")
   switch (siteName,
     "fantasypros" = {
       fd.pattern <- paste(paste0(nfl.teams, "$") , collapse = "|")

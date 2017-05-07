@@ -49,6 +49,7 @@ nflPlayerData <- function(season = 2016, weekNo = 0, positions = position.name){
                      as.character(team), as.character(opponent), as.character(depthChart), as.character(esbid))]
 
   return.data[team == "", team := "FA"]
+  return.data[team == "LA", team := "LAR"]
   return(return.data[, c("playerId", "player", "position", "team", "opponent", "depthChart", "esbid"), with = FALSE])
 }
 
