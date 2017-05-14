@@ -291,7 +291,7 @@ retrieveData <- function(srcTbl, srcPeriod, fbgUser = NULL, fbgPwd = NULL){
                          by = merge.cols, all.x = TRUE)
     }
   }
-    print(dataTable[team %in% c("LA", "LAR", "LAC")])
+
 
   if(exists("playerId", dataTable)){
     dataTable <- dataTable[!is.na(playerId)]

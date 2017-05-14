@@ -92,13 +92,12 @@ getRanks <- function(rank.position = "consensus", leagueType = "std", weekNo = 0
     }
   }
 
-  if (weekNo == 0 & !(rank.position %in% c("DB", "DL", "LB"))){
-    cNames <- c(cNames, "adp", "vsAdp")
-    cTypes <- c(cTypes, "numeric", "numeric")
-  }
+#   if (weekNo == 0 & !(rank.position %in% c("DB", "DL", "LB"))){
+#     cNames <- c(cNames, "adp", "vsAdp")
+#     cTypes <- c(cTypes, "numeric", "numeric")
+#   }
 
-
-  rnks <-data.table::data.table(XML::readHTMLTable(RCurl::getURL(inpUrl))$data)
+  rnks <-data.table::data.table(XML::readHTMLTable(RCurl::getURL(inpUrl), stringsAsFactors=FALSE, colClasses = cTypes)$data)
   if(length(rnks) == 0){
     rnks <- data.table::data.table(t(rep(as.character(NA), length(cNames))))
     rnks <- rnks[0]
