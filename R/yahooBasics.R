@@ -1,6 +1,6 @@
 
 yahooGames <- c("2012" = 273, "2013" = 314, "2014" = 331, "2015" = 348,
-                "2016" = 359)
+                "2016" = 359, "2017" = 371)
 
 getItemKey <- function(season, item.id, item.type){
   game.key <- yahooGames[[as.character(season)]]

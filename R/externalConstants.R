@@ -19,7 +19,7 @@ position.Id <- sapply(position.name, function(p)which(position.name == p))
 
 #' @rdname Constants
 #' @format NULL
-yahooLeague <- 52880
+yahooLeague <- 69928
 
 
 nflTeam.abb <- c("ARI", "ATL", "BAL", "BUF", "CAR", "CHI", "CIN", "CLE",
