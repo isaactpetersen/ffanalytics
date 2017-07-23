@@ -58,9 +58,26 @@ dropoffValue <- function(dataValue){
 
 #' @export scrapeXMLdata
 scrapeXMLdata <- function(xmlUrl){
-  xmlData <- as.data.frame(t(XML::xpathSApply(XML::xmlParse(xmlUrl),
-                                              "//Player", fun = XML::xmlToList)))
-  xmlData <- as.data.frame(apply(xmlData, 2, unlist))
+
+  urlSite <- websites[sapply(websites,
+                             function(ws)(length(grep(ws, tolower(xmlUrl),
+                                                      fixed = TRUE)) >0))]
+  if(urlSite == "fantasyfootballnerd"){
+    ffn_data <- xml2::xml_children(xml2::read_xml(xmlUrl))
+    xmlData  <- data.table::rbindlist(
+      lapply(ffn_data, function(p){
+        p_tbl <-data.table::as.data.table(xml2::as_list(xml2::xml_contents(xml2::xml_children(p))))
+        var_names <- xml2::xml_name(xml2::xml_children(p))
+        data.table::setnames(p_tbl, var_names)
+        return(p_tbl)
+      }), fill = TRUE
+    )
+
+  } else {
+    xmlData <- as.data.frame(t(XML::xpathSApply(XML::xmlParse(xmlUrl),
+                                                "//Player", fun = XML::xmlToList)))
+    xmlData <- as.data.frame(apply(xmlData, 2, unlist))
+  }
   return(xmlData)
 
 }
