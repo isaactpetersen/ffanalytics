@@ -3,8 +3,8 @@
 \docType{data}
 \name{Constants}
 \alias{Constants}
-\alias{position.Id}
 \alias{position.name}
+\alias{position.Id}
 \alias{yahooLeague}
 \title{Package Constants}
 \usage{
@@ -21,4 +21,3 @@ Constants build into the package
 A number of constants are included in the package
 }
 \keyword{datasets}
-

@@ -18,4 +18,3 @@ projectPoints(projectionData, scoringRules, avgType = "average")
 For the scraped data, projected points, confidence interval, standard deviation
 and position ranks are calculated
 }
-

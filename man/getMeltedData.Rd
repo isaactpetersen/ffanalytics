@@ -13,4 +13,3 @@ getMeltedData(dataResult)
 Takes the data result with a projected stat in each column and melts the
 data into one row per player per stat column.
 }
-

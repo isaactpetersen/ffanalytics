@@ -9,4 +9,3 @@ dropoffValue(dataValue)
 \description{
 Calculate Dropoff value
 }
-

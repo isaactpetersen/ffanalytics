@@ -18,4 +18,3 @@ Data table with information on rows that will need to be removed from \link{site
 for the data scrape to be succesfull
 }
 \keyword{datasets}
-

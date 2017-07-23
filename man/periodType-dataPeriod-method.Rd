@@ -13,4 +13,3 @@
 \description{
 Determine if period is a week or season
 }
-

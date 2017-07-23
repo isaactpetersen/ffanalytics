@@ -20,4 +20,3 @@ getNFLValues()
 \description{
 Retrieve ADP data from fantasyfootballcalculator.com.
 }
-

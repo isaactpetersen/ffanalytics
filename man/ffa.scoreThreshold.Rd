@@ -12,4 +12,3 @@ ffa.scoreThreshold
 Default Scoring threshold for tiers
 }
 \keyword{datasets}
-

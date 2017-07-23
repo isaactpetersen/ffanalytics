@@ -1,7 +1,7 @@
 Package: ffanalytics
 Type: Package
 Title: Fantasy Football Analytics
-Version: 0.1.91
+Version: 0.2.0
 Authors@R: c(person("Dennis", "Andersen", email = "andersen.dennis@live.com",
                   role = c("aut", "cre")),
               person("Isaac", "Petersen", email = "isaac@fantasyfootballanalytics.net",
@@ -21,13 +21,14 @@ Imports:
     stringr,
     DT,
     XML,
+    xml2,
     httr,
     tcltk,
     RCurl,
     Hmisc,
     readxl,
     RSelenium
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 Collate:
     'calcStdDev.R'
     'calculatePoints.R'

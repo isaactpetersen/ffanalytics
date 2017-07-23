@@ -29,4 +29,3 @@ redraft leagues only; 1 to only use keeper leagues, 2 for rookie drafts, and
 \description{
 Retrieve AAV data from multiple sources and combine into average.
 }
-

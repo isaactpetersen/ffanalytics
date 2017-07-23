@@ -34,4 +34,3 @@ more columns in the data table than expected. If there are fewer columns than
 expected the function will retry up to 10 times to get the number of columns
 correct. If it fails after 10 tries then an error will be thrown.
 }
-

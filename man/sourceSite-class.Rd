@@ -2,8 +2,8 @@
 % Please edit documentation in R/sourceSite.R
 \docType{class}
 \name{sourceSite-class}
-\alias{sourceSite}
 \alias{sourceSite-class}
+\alias{sourceSite}
 \title{Class to represent source sites}
 \description{
 Source sites are one of the foundations to the data scrapes. They are
@@ -29,6 +29,7 @@ can be derived as well.
 
 \item{\code{playerId}}{What to call the id number for player if present}
 }}
+
 \note{
 When specifying the URLs paramters can be used as place holders.
 }
@@ -40,4 +41,3 @@ sourceSite(siteName = "CBS",
            playerLink = "/fantasyfootball/players/playerpage/[0-9]{3,6}",
            playerId = "cbsId")
 }
-

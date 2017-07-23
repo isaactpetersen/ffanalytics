@@ -14,4 +14,3 @@ createObject(objName = as.character(), targetValues = list())
 \description{
 Allows creation of class objects based on a list.
 }
-

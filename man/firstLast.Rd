@@ -16,4 +16,3 @@ to "First Name Last Name".
 \examples{
 firstLast("Smith, John") # Will return John Smith
 }
-

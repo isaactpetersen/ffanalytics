@@ -34,4 +34,3 @@ A \link[data.table]{data.table} with 13 columns
 \description{
 Retrieve data from MFL and NFL and combine
 }
-

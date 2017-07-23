@@ -22,4 +22,3 @@ analysts
 Data table with information on analysts that are bing used for data scrapes.
 }
 \keyword{datasets}
-

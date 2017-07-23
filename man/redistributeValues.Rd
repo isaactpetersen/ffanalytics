@@ -28,4 +28,3 @@ others based on the averages. For example, the function can be used to
 redistribute total field goals to field goals per distances based of what
 the average values are for each of the field goals per distance.
 }
-

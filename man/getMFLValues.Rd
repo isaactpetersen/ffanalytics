@@ -43,4 +43,3 @@ and 3 for MFL Public Leagues. If not  speficied all types of drafts will be used
 \description{
 Retrieve ADP and auction value data from MyFantasyLeague.com
 }
-

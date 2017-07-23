@@ -11,4 +11,3 @@ Calculation of risk is done by scaling the standard deviation variables
 passed and averaging them before returning a measure with mean 5 and standard
 deviation of 2
 }
-

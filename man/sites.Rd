@@ -20,4 +20,3 @@ sites
 Data table with information on sites that are being used for datascrapes.
 }
 \keyword{datasets}
-

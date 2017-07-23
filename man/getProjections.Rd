@@ -49,4 +49,3 @@ getProjections(scrapeData,                    ## Based on data in scrapeData
                mflMocks = 0, mflLeagues = 0,  ## using only real MFL redraft league
                adpSources =  c("FFC", "MFL")) ## and ADP data from MFL and FFC
 }
-

@@ -42,4 +42,3 @@ scoringRules <- list(
 )
 }
 \keyword{datasets}
-

@@ -12,4 +12,3 @@ ffa.vorAdjustment
 Default VOR Adjustments
 }
 \keyword{datasets}
-

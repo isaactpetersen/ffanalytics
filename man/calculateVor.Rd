@@ -19,4 +19,3 @@ Based on provided ranks and points calculate the value over replacement.
 Function uses \link{vorBaseline} and \link{vorAdjustment} in the calculation.
 Please adjust these to match your league before running calculation.
 }
-

@@ -2,8 +2,9 @@
 % Please edit documentation in R/columnVariables.R, R/data.R
 \docType{data}
 \name{tableColumns}
-\alias{resultColumns}
+\alias{tableColumns}
 \alias{staticColumns}
+\alias{resultColumns}
 \alias{tableColumns}
 \title{Constants defining result columns}
 \format{A \link[data.table]{data.table} with 2924 rows and 6 columns.
@@ -37,4 +38,3 @@ the columns in the results table for that position.}
 Data table with information on the columns in tables identified in \link{siteTables}.
 }
 \keyword{datasets}
-

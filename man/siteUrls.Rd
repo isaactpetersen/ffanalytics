@@ -27,4 +27,3 @@ siteUrls
 Data table with information on the URLs that data will be scraped from.
 }
 \keyword{datasets}
-

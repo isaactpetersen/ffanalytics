@@ -23,4 +23,3 @@ getFFCValues(format = "standard", teams = 12)
 \description{
 Retrieve ADP data from fantasyfootballcalculator.com.
 }
-

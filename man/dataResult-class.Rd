@@ -2,8 +2,8 @@
 % Please edit documentation in R/dataResult.R
 \docType{class}
 \name{dataResult-class}
-\alias{dataResult}
 \alias{dataResult-class}
+\alias{dataResult}
 \title{Class to represent scrape results}
 \description{
 Class to represent scrape results

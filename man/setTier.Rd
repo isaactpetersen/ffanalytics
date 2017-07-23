@@ -9,4 +9,3 @@ setTier(points, position)
 \description{
 Set tiers based on thresholds
 }
-

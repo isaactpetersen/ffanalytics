@@ -28,4 +28,3 @@ Data can be retrieved from a source table when specified along with a source
 analyst and a data period. The data scrape will translate the data columns
 for each source table into a uniform format.
 }
-

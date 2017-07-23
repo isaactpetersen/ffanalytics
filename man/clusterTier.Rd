@@ -9,4 +9,3 @@ clusterTier(points, position)
 \description{
 Set tiers based on clusters
 }
-

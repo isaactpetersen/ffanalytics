@@ -28,4 +28,3 @@ A \link[data.table]{data.table} with 7 columns:
 \description{
 Retrieve player data from NFL.com
 }
-

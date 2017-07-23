@@ -45,4 +45,3 @@ runScrape(season = 2016, week = 1,               ## Scrape 2016 week 1 data for
          analysts = c(-1, 5),                    ## CBS Average and NFL.com
          positions = c("QB", "RB", "WR", "TE",)) ## and offensive positions
 }
-

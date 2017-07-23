@@ -12,4 +12,3 @@ ffa.tierGroups
 Default number of tiers for clusters
 }
 \keyword{datasets}
-

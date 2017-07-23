@@ -21,4 +21,3 @@ Based on selected analysts, a given period and selected analysts generate
 URLs that will be scraped. URLs are generated as merges of the \link{analysts},
 \link{sites}, \link{siteUrls}, and \link{siteTables} datasets.
 }
-

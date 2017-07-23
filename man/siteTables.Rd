@@ -27,4 +27,3 @@ siteTables
 Data table with information on tables that data will be scraped from.
 }
 \keyword{datasets}
-

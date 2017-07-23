@@ -18,4 +18,3 @@ calcStdDev(calcMethod = "weighted", dataValue = as.numeric(),
 \description{
 Standard Deviation is calculated based on method passed to the function.
 }
-

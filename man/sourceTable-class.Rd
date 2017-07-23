@@ -2,8 +2,8 @@
 % Please edit documentation in R/sourceTable.R
 \docType{class}
 \name{sourceTable-class}
-\alias{sourceTable}
 \alias{sourceTable-class}
+\alias{sourceTable}
 \title{Class to represent a data table from a source site}
 \description{
 Source table class extends the \link{sourceAnalyst} class
@@ -26,6 +26,7 @@ page numbering. Otherwise 1}
 
 \item{\code{tableId}}{ID from configuration data that identifies the table uniquely}
 }}
+
 \examples{
 cbs.qb <- sourceTable(sourcePosition = "QB",
                       positionAlias = "QB",
@@ -35,4 +36,3 @@ cbs.qb <- sourceTable(sourcePosition = "QB",
                       tableId = 1
                      )
 }
-

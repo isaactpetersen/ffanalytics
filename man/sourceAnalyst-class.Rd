@@ -2,8 +2,8 @@
 % Please edit documentation in R/sourceAnalyst.R
 \docType{class}
 \name{sourceAnalyst-class}
-\alias{sourceAnalyst}
 \alias{sourceAnalyst-class}
+\alias{sourceAnalyst}
 \title{Class to represent the source Analysts}
 \description{
 Class to represent the source Analysts
@@ -20,9 +20,9 @@ analysts for a site}
 If left blank, it will be set as a 4 letter abbreviation of the site + analyst
 names using \link{abbreviate}.}
 }}
+
 \examples{
 cbs.avg <- sourceAnalyst(analystName = "Average",
                          sourceId = "avg",
                          analystId = "cbav")
 }
-

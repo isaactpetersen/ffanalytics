@@ -12,4 +12,3 @@ ffa.vorBaseline
 Default VOR Baseline
 }
 \keyword{datasets}
-

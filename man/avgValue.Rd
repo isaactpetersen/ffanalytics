@@ -22,4 +22,3 @@ dataValue parameter.}
 Will calculate average of provided data and weights based on the selected
 method
 }
-

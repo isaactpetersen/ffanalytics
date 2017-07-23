@@ -31,4 +31,3 @@ A \link[data.table]{data.table} with 10 columns
 \description{
 Function to read player data from MFL using the MFL API
 }
-

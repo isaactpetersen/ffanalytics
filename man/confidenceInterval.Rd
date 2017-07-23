@@ -24,4 +24,3 @@ If the correcpsonding average value is less than the low point then we
 set the lower point to the minimum value. Conversely if the average value is
 higher than the upper limit then we set the upper limit to the max value.
 }
-

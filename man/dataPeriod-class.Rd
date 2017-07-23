@@ -2,8 +2,8 @@
 % Please edit documentation in R/dataPeriod.R
 \docType{class}
 \name{dataPeriod-class}
-\alias{dataPeriod}
 \alias{dataPeriod-class}
+\alias{dataPeriod}
 \title{Class to represent the period for a datascrape}
 \description{
 The datascrapes need a week and season designation to work.
@@ -17,10 +17,10 @@ for regular season and 18-21 for post season}
 \item{\code{season}}{A year representing the season. Should be 2008 or later but
 can't be higher than current year}
 }}
+
 \examples{
 dataPeriod(weekNo = 1, season = 2015) # Week 1 of the 2015 season
 dataPeriod(season = 2015)             # 2015 season
 dataPeriod(weekNo = 3)                # Week 3 of the current year
 dataPeriod()                          # Current season
 }
-

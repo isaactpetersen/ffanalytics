@@ -9,4 +9,3 @@ analystOptions(period)
 \description{
 Find the analysts that are projecting stats for the provided period
 }
-

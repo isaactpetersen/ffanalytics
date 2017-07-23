@@ -20,4 +20,3 @@ getYahooValues(type = "SD")
 \description{
 Retrieve ADP and auction value data from Yahoo
 }
-

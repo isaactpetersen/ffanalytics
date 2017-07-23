@@ -9,4 +9,3 @@ dataGadget(inputData)
 \description{
 Gadget used to display results of scrape calculations
 }
-

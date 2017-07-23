@@ -27,4 +27,3 @@ A \link[data.table]{data.table} with up to 4 cloumns
 Based on list of scoring rules calculate fantasy points using projection data
 passed in a table
 }
-

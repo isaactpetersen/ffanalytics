@@ -17,4 +17,3 @@ average values}
 For analysts that don't report on certain values the averages across other
 analysts are calculated so they can be imputed.
 }
-

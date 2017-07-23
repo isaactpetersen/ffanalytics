@@ -18,4 +18,3 @@ For many of the the data soruces the player column contains more data than
 needed to identify the player. With the help of regular expression data such as position,
 team and injury information is cleaned from the player names.
 }
-
