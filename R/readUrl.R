@@ -32,6 +32,7 @@ readUrl <- function(inpUrl, columnTypes, columnNames, whichTable, removeRow,
   urlSite <- websites[sapply(websites,
                              function(ws)(length(grep(ws, tolower(inpUrl),
                                                       fixed = TRUE)) >0))]
+
   if(dataType %in% c("file", "csv") & urlSite != "fantasysharks"){
     projDir <- gsub("/$", "", projDir)
     inpUrl <- gsub("^/|/$", "", inpUrl)
@@ -50,7 +51,7 @@ readUrl <- function(inpUrl, columnTypes, columnNames, whichTable, removeRow,
   }
 
 
-  if(urlSite == "fantasypros" | urlSite == "fantasydata" | urlSite == "yahoo"){
+  if(urlSite == "fantasypros" | urlSite == "fantasydata" | urlSite == "yahoo" | urlSite == "cbssports"){
     inpUrl <- tryCatch(RCurl::getURL(inpUrl),
                        error = function(e)return(emptyData))
   }
