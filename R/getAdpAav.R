@@ -88,8 +88,9 @@ getESPNValues <- function(){
 #'  \item{leagueType}{Assuming standard league type}}
 #' @export getCBSValues
 getCBSValues <-function(){
-  cbsVal <- data.table::data.table(XML::readHTMLTable("http://www.cbssports.com/fantasy/football/draft/averages?&print_rows=9999", which = 1, stringsAsFactors = FALSE, skip.rows = 1))
-  pgeLinks <- XML::getHTMLLinks("http://www.cbssports.com/fantasy/football/draft/averages?&print_rows=9999")
+  cbsURL <- RCurl::getURL("https://www.cbssports.com/fantasy/football/draft/averages?&print_rows=9999")
+  cbsVal <- data.table::data.table(XML::readHTMLTable(cbsURL, which = 1, stringsAsFactors = FALSE, skip.rows = 1))
+  pgeLinks <- XML::getHTMLLinks(cbsURL)
   pId <- as.numeric(unique(gsub("[^0-9]", "", pgeLinks[grep("/fantasy/football/players/[0-9]{3,6}", pgeLinks)])))
   data.table::setnames(cbsVal, c(1:6), c("rank", "player", "trend", "adp", "HiLo", "pctOwn"))
   cbsVal <- cbsVal[!is.na(player)]
