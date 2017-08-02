@@ -3,7 +3,7 @@ urlTblCols <- c("analystId", "siteTableId", "positionId", "startPage","endPage",
 
 urlParameters <-  c("{$WeekNo}", "{$Season}", "{$Segment}",  "{$PgeID}", "{$YahooLeague}", "{$FFNKEY}", "{$SrcID}", "{$Pos}")
 
-sharkSegment = c("2015" = 522, "2016" = 554, "2017" = 586)
+sharkSegment = c("2015" = 522, "2016" = 554, "2017" = 587)
 
 websites <- c("footballguys", "fftoday", "fantasysharks", "walterfootball", "yahoo", "fox", "numberfire", "rotowire", "rtsports", "fantasyfootballnerd",
               "cbssports", "4for4", "espn", "nfl.com", "fantasypros", "eatdrinkandsleepfootball", "fantasydata", "pff", "freedraftguide")
