@@ -21,6 +21,7 @@
 readUrl <- function(inpUrl, columnTypes, columnNames, whichTable, removeRow,
                     dataType, idVar, playerLinkString, fbgUser, fbgPwd){
 
+
   if(length(columnNames) > 0){
     srcData <- data.table::data.table(t(rep(NA, length(columnNames))))[0]
     data.table::setnames(srcData, columnNames)
@@ -32,6 +33,9 @@ readUrl <- function(inpUrl, columnTypes, columnNames, whichTable, removeRow,
   urlSite <- websites[sapply(websites,
                              function(ws)(length(grep(ws, tolower(inpUrl),
                                                       fixed = TRUE)) >0))]
+
+  if(length(urlSite) == 0)
+    urlSite <- "local"
 
   if(dataType %in% c("file", "csv") & urlSite != "fantasysharks"){
     projDir <- gsub("/$", "", projDir)
@@ -83,6 +87,7 @@ readUrl <- function(inpUrl, columnTypes, columnNames, whichTable, removeRow,
     return(emptyData)
   }
 
+  sheetColumns <- c(LETTERS, paste0("A", LETTERS))
   # Will try up to 10 times to get data from the source
   while(read.try <= 10 ){
     srcData <-tryCatch(
@@ -93,7 +98,7 @@ readUrl <- function(inpUrl, columnTypes, columnNames, whichTable, removeRow,
                                          which = as.numeric(whichTable)),
              "csv" = read.csv(inpUrl, stringsAsFactors = FALSE, skip = removeRow),
              "xml" = scrapeXMLdata(inpUrl),
-             "xls" = readxl::read_excel(dataFile, sheet = whichTable),
+             "xls" = readxl::read_excel(dataFile, range = paste0(whichTable, "!A1:", sheetColumns[length(columnNames)] , "1000")),
              "json" = scrapeJSONdata(inpUrl),
              "jqry" = scrapeJQuery(inpUrl)
       ),
@@ -105,6 +110,7 @@ readUrl <- function(inpUrl, columnTypes, columnNames, whichTable, removeRow,
       break
     read.try = read.try + 1
   }
+
 
   if(read.try >= 10 & length(srcData) == 1)
     return(emptyData)
@@ -182,7 +188,7 @@ readUrl <- function(inpUrl, columnTypes, columnNames, whichTable, removeRow,
     srcData[, player := firstLast(player)]
   }
 
-  if(urlSite == "footballguys" & exists("team", srcData))
+  if(urlSite %in% c("footballguys", "local") & exists("team", srcData))
     srcData[, team := extractTeam(team, urlSite)]
 
   if(urlSite %in% c("fantasypros", "fox", "espn"))
@@ -199,6 +205,11 @@ readUrl <- function(inpUrl, columnTypes, columnNames, whichTable, removeRow,
     playerId <- NA
     switch (urlSite,
             "footballguys"= {
+              playerId <- gsub("../players/player-all-info.php?id=","",
+                               pgeLinks[grep("player-all-info.php?",
+                                             pgeLinks)], fixed = TRUE)
+            } ,
+            "local"= {
               playerId <- gsub("../players/player-all-info.php?id=","",
                                pgeLinks[grep("player-all-info.php?",
                                              pgeLinks)], fixed = TRUE)
@@ -237,5 +248,7 @@ readUrl <- function(inpUrl, columnTypes, columnNames, whichTable, removeRow,
       return(as.numeric(col))
     }), by = intersect(names(srcData), c("playerId", idVar, "player", "team",
                                          "position","passCompAtt"))]
+
+
   return(srcData)
 }
