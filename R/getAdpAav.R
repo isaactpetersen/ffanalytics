@@ -178,11 +178,12 @@ getYahooValues <- function(type = "SD"){
 
   yahooDataUrls <- data.table::rbindlist(yahooDataUrls)
   yahooData <- apply(yahooDataUrls, 1, function(u){
-    data <- data.table::data.table(XML::readHTMLTable(u["url"], stringsAsFactors = FALSE)$draftanalysistable)
-    pgeLinks <- XML::getHTMLLinks(u["url"])
+    page <- RCurl::getURL(u["url"], .opts=curlOptions(followlocation=TRUE))
+    data <- data.table::data.table(XML::readHTMLTable(page, stringsAsFactors = FALSE)$draftanalysistable)
+    pgeLinks <- XML::getHTMLLinks(page)
 
     yahooId <- as.numeric(unique(gsub("[^0-9]", "",
-                                       pgeLinks[grep("http://sports.yahoo.com/nfl/players/[0-9]{3,6}", pgeLinks)])))
+                                       pgeLinks[grep("https?://sports.yahoo.com/nfl/players/[0-9]{3,6}", pgeLinks)])))
 
     if(nrow(data) > 0){
       data[, position := u["position"]]
