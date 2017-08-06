@@ -33,8 +33,8 @@ getPlayerData <- function(season, weekNo, pos = position.name){
   allPlayers <- allPlayers[, names(mfl), with = FALSE]
 
   # Adding data from NFL
-  allPlayers <- merge(allPlayers,
-                      nfl[, c("playerId", "opponent", "depthChart", "esbid"), with = FALSE],
+  allPlayers <- merge(allPlayers[, playerId := as.integer(playerId)],
+                      nfl[, c("playerId", "opponent", "depthChart", "esbid"), with = FALSE][, playerId := as.integer(playerId)],
                       by = "playerId", all.x = TRUE)
 
   return(allPlayers)

@@ -36,8 +36,9 @@ tableRowRemove <- data.table::data.table(read.csv("data-raw/tableRowRemove.csv",
 data.table::setnames(tableRowRemove, "siteTableId", "tableId")
 tableRowRemove[, rowRemoveId := NULL]
 
+nfl_missing <- data.table::data.table(read.csv("data-raw/missing_nflID.csv", stringsAsFactors = FALSE))
 
-devtools::use_data(analysts, analystPositions, sites, siteTables,
+devtools::use_data(analysts, analystPositions, sites, siteTables,nfl_missing,
                    siteUrls, tableColumns, tableRowRemove, overwrite = TRUE)
 
 nflstats <- data.table::data.table(read.csv("data-raw/nflstats.csv", stringsAsFactors = FALSE))

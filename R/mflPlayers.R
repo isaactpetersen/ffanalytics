@@ -24,12 +24,14 @@ mflPlayers <- function(season = 2016, weekNo = 0, pos = position.name){
   mflData <- XML::xmlToList(paste("http://football.myfantasyleague.com/", season,
                                   "/export?TYPE=players&L=&W=", weekNo, "&JSON=0&DETAILS=1", sep =""))
   mflData$.attrs <- NULL
-
   mflData <- data.table::rbindlist(lapply(mflData, function(pl)data.table::data.table(t(pl))), fill = TRUE)
 
     # Reducing the NFL IDs to be just numbers
-  mflData[, nfl_id := gsub("[^0-9]", "", nfl_id)]
+  mflData[, nfl_id := as.integer(gsub("[^0-9]", "", nfl_id))]
 
+  mflData <- merge(mflData[, id:= as.integer(id)], nfl_missing[, c("player_id", "nfl_id"), with = FALSE], by.y = "player_id", by.x="id", all.x = TRUE, suffixes = c("", "_new"))
+  mflData[is.na(nfl_id), nfl_id := nfl_id_new]
+  mflData[, c("nfl_id_new") := NULL]
   # Updating team names
   mflData[team == "FA*", team := "FA"]
   mflData[team == "SFO", team := "SF"]
