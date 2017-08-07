@@ -92,7 +92,7 @@ getCBSValues <-function(){
   cbsVal <- data.table::data.table(XML::readHTMLTable(cbsURL, which = 1, stringsAsFactors = FALSE, skip.rows = 1))
   pgeLinks <- XML::getHTMLLinks(cbsURL)
   pId <- as.numeric(unique(gsub("[^0-9]", "", pgeLinks[grep("/fantasy/football/players/[0-9]{3,6}", pgeLinks)])))
-  data.table::setnames(cbsVal, c(1:6), c("rank", "player", "trend", "adp", "HiLo", "pctOwn"))
+  data.table::setnames(cbsVal, c(1:5), c("rank", "player", "adp", "HiLo", "pctOwn"))
   cbsVal <- cbsVal[!is.na(player)]
   cbsVal[, player := getPlayerName(player)]
   cbsVal[, cbsId := pId]
