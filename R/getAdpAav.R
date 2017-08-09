@@ -178,7 +178,7 @@ getYahooValues <- function(type = "SD"){
 
   yahooDataUrls <- data.table::rbindlist(yahooDataUrls)
   yahooData <- apply(yahooDataUrls, 1, function(u){
-    page <- RCurl::getURL(u["url"], .opts=curlOptions(followlocation=TRUE))
+    page <- RCurl::getURL(u["url"], .opts=RCurl::curlOptions(followlocation=TRUE))
     data <- data.table::data.table(XML::readHTMLTable(page, stringsAsFactors = FALSE)$draftanalysistable)
     pgeLinks <- XML::getHTMLLinks(page)
 
@@ -196,9 +196,9 @@ getYahooValues <- function(type = "SD"){
     data.table::setnames(yahooData, c("yahooId", "player", "adp", "avgRound", "pctDraft", "position"))
   }
   if(type == "AD"){
-    data.table::setnames(yahooData, c("yahooId", "player", "aav", "avgCost", "pctDraft", "position"))
-    yahooData[, aav := as.numeric(gsub("$", "", aav, fixed = TRUE))]
-    yahooData[, avgCost :=  as.numeric(gsub("$", "", avgCost, fixed = TRUE))]
+    data.table::setnames(yahooData, c("yahooId", "player", "projValue", "aav", "pctDraft", "position"))
+    yahooData[, projValue := as.numeric(gsub("$", "", projValue, fixed = TRUE))]
+    yahooData[, aav :=  as.numeric(gsub("$", "", aav, fixed = TRUE))]
   }
 
   yahooData[, leagueType := "std"]
