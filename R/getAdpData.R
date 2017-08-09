@@ -99,7 +99,7 @@ getADPdata <- function(ADPsources = c("CBS", "ESPN", "FFC", "MFL", "NFL"),
 #' redraft leagues only; 1 to only use keeper leagues, 2 for rookie drafts, and
 #' 3 for MFL Public Leagues. If not speficied all types of drafts will be used.
 #' @export getAAVdata
-getAAVdata <- function(AAVsources = c( "ESPN", "MFL", "NFL"),
+getAAVdata <- function(AAVsources = c("ESPN", "NFL", "Yahoo"),
                        season =  as.POSIXlt(Sys.Date())$year + 1900,
                        teams = 12, format = "standard", mflMocks = NULL,
                        mflLeagues = NULL){
@@ -125,23 +125,35 @@ getAAVdata <- function(AAVsources = c( "ESPN", "MFL", "NFL"),
     nflAAV[, esbid := NULL]
     aavData$NFL <- nflAAV
   }
-
-  if("MFL" %in% AAVsources){
-    if(format == "standard")
-      mflppr = 0
-    if(format == "ppr")
-      mflppr = 1
-    if(is.null(mflMocks))
-      mflMocks = -1
-    if(is.null(mflLeagues))
-      mflLeagues = -1
-    mflAAV <- getMFLValues(season, type = "aav", teams, ppr = mflppr,
-                           mock = mflMocks, keeper = mflLeagues)[, c("mflId", "aav"),  with = FALSE]
-    mflAAV <- merge(playerData[, c("playerId", "mflId", "player", "position", "team"), with = FALSE],
-                    mflAAV, by = "mflId")
-    mflAAV[, mflId := NULL]
-    aavData$MFL <- mflAAV
+  
+  if("Yahoo" %in% AAVsources){
+    yahooAAV <- getYahooValues("AD")[, c("yahooId", "aav"), with = FALSE]
+    yahooAAV$yahooId <- as.character(yahooAAV$yahooId)
+    yahooAAV <- merge(playerData[, c("yahooId", "playerId", "player", "position", "team"), with = FALSE],
+                      yahooAAV, by = "yahooId")
+    yahooAAV[, yahooId := NULL]
+    aavData$Yahoo <- yahooAAV
   }
+
+# MFL's average auction values are inconsistent since they are based on leagues with wildly different settings
+# the following block for scraping MFL's AAVs can be uncommented if the values are ultimately corrected
+#   if("MFL" %in% AAVsources){
+#     if(format == "standard")
+#       mflppr = 0
+#     if(format == "ppr")
+#       mflppr = 1
+#     if(is.null(mflMocks))
+#       mflMocks = -1
+#     if(is.null(mflLeagues))
+#       mflLeagues = -1
+#     mflAAV <- getMFLValues(season, type = "aav", teams, ppr = mflppr,
+#                            mock = mflMocks, keeper = mflLeagues)[, c("mflId", "aav"),  with = FALSE]
+#     mflAAV$mflId <- as.numeric(mflAAV$mflId)
+#     mflAAV <- merge(playerData[, c("playerId", "mflId", "player", "position", "team"), with = FALSE],
+#                     mflAAV, by = "mflId")
+#     mflAAV[, mflId := NULL]
+#     aavData$MFL <- mflAAV
+#   }
 
   calcAvg <- (length(aavData) > 1)
   aavData <- data.table::rbindlist(aavData, fill = TRUE)
