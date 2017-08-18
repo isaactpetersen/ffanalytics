@@ -580,9 +580,9 @@ tableColumnID,dataColID,siteTableID,columnPeriod,columnOrder,removeColumn
 581,30,22,season,6,0
 582,14,22,season,7,0
 583,15,22,season,8,0
-584,58,22,season,9,0
-585,52,22,season,10,0
-586,27,22,season,11,1
+584,58,22,season,10,0
+585,52,22,season,11,0
+586,27,22,season,12,1
 587,49,22,week,1,0
 588,35,22,week,2,1
 589,13,22,week,3,0
@@ -590,9 +590,9 @@ tableColumnID,dataColID,siteTableID,columnPeriod,columnOrder,removeColumn
 591,30,22,week,5,0
 592,14,22,week,6,0
 593,15,22,week,7,0
-594,58,22,week,8,0
-595,52,22,week,9,0
-596,27,22,week,10,1
+594,58,22,week,9,0
+595,52,22,week,10,0
+596,27,22,week,11,1
 597,49,23,season,1,0
 598,94,23,season,2,1
 599,42,23,season,3,0
@@ -3610,3 +3610,5 @@ tableColumnID,dataColID,siteTableID,columnPeriod,columnOrder,removeColumn
 ,268,9,season,4,1
 ,268,10,week,4,1
 ,268,10,season,4,1
+,269,22,week,8,0
+,269,22,season,9,0

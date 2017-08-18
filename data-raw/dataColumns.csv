@@ -233,3 +233,4 @@ dataColId,columnName,columnType
 266,pass1st,numeric
 267,passTd40,numeric
 268,forecast,character
+269,dst2PtRet,numeric
