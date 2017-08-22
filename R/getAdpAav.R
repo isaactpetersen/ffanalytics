@@ -202,7 +202,7 @@ getYahooValues <- function(type = "SD"){
   }
 
   yahooData[, leagueType := "std"]
-  return(yahooData[,c("yahooId", ifelse(type == "SD", "adp", "aav"), "leagueType"), with = FALSE])
+  return(yahooData[,c("yahooId", ifelse(type == "SD", "adp", "avgCost"), "leagueType"), with = FALSE])
 }
 
 #' ADP and auction value data from MyFantasyLeague.com
