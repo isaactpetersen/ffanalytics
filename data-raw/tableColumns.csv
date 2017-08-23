@@ -3608,3 +3608,7 @@ tableColumnID,dataColID,siteTableID,columnPeriod,columnOrder,removeColumn
 13998,97,10,season,38,1
 ,269,22,week,8,0
 ,269,22,season,9,0
+,268,7,season,4,1
+,268,8,season,4,1
+,268,9,season,4,1
+,268,10,season,4,1
