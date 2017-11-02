@@ -9,7 +9,7 @@ urlID,siteID,siteUrl,urlPeriod,urlData,nameCol,whichTable,playerLinkString
 19,8,https://www.fantasypros.com/nfl/projections/{$PosID}.php,week,html,1,2,NA
 20,9,http://subscribers.footballguys.com/myfbg/myweeklycheatsheet.php?who={$SrcID}&pos={$PosID}&profile=0&week={$WeekNo},week,html,2,1,player-all-info.php?
 21,10,http://www.eatdrinkandsleepfootball.com/fantasy/projections/{$Season}/{$Pos}/,week,html,2,2,NA
-22,11,http://www.fantasysharks.com/apps/bert/forecasts/projections.php?csv=1&Sort=&Segment={$Segment}&Position={$PosID}&scoring=1&League=&uid=4&uid2=&printable=,week,csv,0,NA,NA
+22,11,https://www.fantasysharks.com/apps/bert/forecasts/projections.php?csv=1&Sort=&Segment={$Segment}&Position={$PosID}&scoring=1&League=&uid=4&uid2=&printable=,week,csv,0,NA,NA
 23,1,https://www.cbssports.com/fantasy/football/stats/weeklyprojections/{$Pos}/season/{$SrcID}/standard?&print_rows=9999,season,html,1,1,"/fantasyfootball/players/playerpage/[0-9]{3,6}"
 24,2,http://football.fantasysports.yahoo.com/f1/{$YahooLeague}/players?utmpdku=1&&sort=PTS&sdir=1&status=A&pos={$Pos}&cut_type=9&stat1=S_PS_{$Season}&jsenabled=1&count={$PgeID},season,html,2,2,"https://sports.yahoo.com/nfl/players/[0-9]{3,6}"
 25,3,http://games.espn.go.com/ffl/tools/projections?&slotCategoryId={$PosID}&startIndex={$PgeID},season,html,2,2,NA
@@ -18,7 +18,7 @@ urlID,siteID,siteUrl,urlPeriod,urlData,nameCol,whichTable,playerLinkString
 28,6,http://www.fftoday.com/rankings/playerproj.php?Season={$Season}&LeaugeID=1&PosID={$PosID}&cur_page={$PgeID},season,html,2,11,"/stats/players/"""
 29,9,http://subscribers.footballguys.com/myfbg/myviewprojections.php?projforwhat={$PosID}&projector={$SrcID}&profile=0,season,html,2,1,player-all-info.php?
 30,10,http://www.eatdrinkandsleepfootball.com/fantasy/projections/{$Season}/{$Pos}/,season,html,2,2,NA
-31,11,http://www.fantasysharks.com/apps/bert/forecasts/projections.php?csv=1&Position={$PosID}&scoring=1&segment={$Segment}&uid=4,season,csv,0,NA,NA
+31,11,https://www.fantasysharks.com/apps/bert/forecasts/projections.php?csv=1&Position={$PosID}&scoring=1&segment={$Segment}&uid=4,season,csv,0,NA,NA
 32,14,http://www.fftoday.com/rankings/playerproj.php?Season={$Season}&LeaugeID=1&PosID={$PosID}&cur_page={$PgeID},season,html,2,11,"/stats/players/"""
 41,12,http://www.fantasyfootballnerd.com/service/weekly-projections/xml/{$FFNKEY}/{$Pos}/{$WeekNo},week,xml,28,NA,NA
 51,12,http://www.fantasyfootballnerd.com/service/draft-projections/xml/{$FFNKEY}/{$Pos},season,xml,10,NA,NA
