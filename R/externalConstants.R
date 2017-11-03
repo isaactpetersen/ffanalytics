@@ -30,7 +30,7 @@ nflTeam.abb <- c("ARI", "ATL", "BAL", "BUF", "CAR", "CHI", "CIN", "CLE",
 nflTeam.id <- c(100026, 100001, 100002, 100003, 100004, 100005, 100006, 100007,
                 100008, 100009, 100010, 100011, 100013, 100014, 100015, 100016,
                 100019, 100020, 100022, 100021, 100023, 100024, 100025, 100027,
-                100028, 100029, 100017, 100031, 100012, 100032, 100030, 100018)
+                100017, 100029, 100028, 100031, 100012, 100032, 100030, 100018)
 
 nflTeam.city <- c("Arizona",   "Atlanta",       "Baltimore",   "Buffalo",     "Carolina",  "Chicago",      "Cincinnati",   "Cleveland",
                   "Dallas",    "Denver",        "Detroit",     "Green Bay",   "Houston",   "Indianapolis", "Jacksonville", "Kansas City",

@@ -4,7 +4,7 @@
 \alias{getAAVdata}
 \title{Get AAV data}
 \usage{
-getAAVdata(AAVsources = c("ESPN", "MFL", "NFL"),
+getAAVdata(AAVsources = c("ESPN", "NFL", "Yahoo"),
   season = as.POSIXlt(Sys.Date())$year + 1900, teams = 12,
   format = "standard", mflMocks = NULL, mflLeagues = NULL)
 }
