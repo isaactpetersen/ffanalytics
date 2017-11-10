@@ -110,6 +110,9 @@ retrieveData <- function(srcTbl, srcPeriod, fbgUser = NULL, fbgPwd = NULL){
     srcPeriod@weekNo <- ifelse(srcPeriod@weekNo > 17, srcPeriod@weekNo + 3, srcPeriod@weekNo)
   }
 
+  if (grepl("fantasydata.com", urlAddress)) {
+    srcPeriod@weekNo <- srcPeriod@weekNo - 1
+  }
 
   # Replacing parameters with associated values
   for(p in urlParms[urlParms != "{$PgeID}"]){

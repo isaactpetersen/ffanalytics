@@ -54,8 +54,7 @@ readUrl <- function(inpUrl, columnTypes, columnNames, whichTable, removeRow,
     inpUrl <- fbgUrl(inpUrl, fbgUser, fbgPwd)
   }
 
-
-  if(urlSite == "fantasypros" | urlSite == "fantasydata" | urlSite == "yahoo" | urlSite == "cbssports"){
+  if (urlSite %in% c("fantasypros", "fantasydata", "yahoo", "cbssports", "fleaflicker", "numberfire")) {
     inpUrl <- tryCatch(RCurl::getURL(inpUrl),
                        error = function(e)return(emptyData))
   }
@@ -78,6 +77,7 @@ readUrl <- function(inpUrl, columnTypes, columnNames, whichTable, removeRow,
   stRow <- 1
   if(urlSite == "numberfire"){
     stRow <- 2
+    whichTable <- c(1, 2)
   }
 
   # check if input file exists
@@ -105,7 +105,11 @@ readUrl <- function(inpUrl, columnTypes, columnNames, whichTable, removeRow,
       error = function(e)data.table::data.table())
 
     if(dataType != "json")
-      srcData <- data.table::data.table(srcData)
+      if (urlSite == "numberfire") {
+        srcData <- data.table::data.table(cbind(srcData[[1]], srcData[[2]]))
+      } else {
+        srcData <- data.table::data.table(srcData)
+      }
     if((length(srcData) > 1 &  length(columnNames) <= length(srcData)) | dataType == "json")
       break
     read.try = read.try + 1
@@ -191,7 +195,7 @@ readUrl <- function(inpUrl, columnTypes, columnNames, whichTable, removeRow,
   if(urlSite %in% c("footballguys", "local") & exists("team", srcData))
     srcData[, team := extractTeam(team, urlSite)]
 
-  if(urlSite %in% c("fantasypros", "fox", "espn"))
+  if(urlSite %in% c("fantasypros", "fox", "espn", "numberfire"))
     srcData[, team := extractTeam(player, urlSite)]
   if(urlSite == "walterfootball")
     srcData[, team := nflTeam.abb[which(nflTeam.name == team)], by = rownames(srcData)]

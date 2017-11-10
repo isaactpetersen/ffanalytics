@@ -5,7 +5,7 @@ urlID,siteID,siteUrl,urlPeriod,urlData,nameCol,whichTable,playerLinkString
 15,4,http://fantasy.nfl.com/research/projections?position={$PosID}&sort=projectedPts&statCatery=projectedStats&statSeason={$Season}&statType=weekProjectedStats&offset={$PgeID}&statweek={$WeekNo},week,html,1,1,"playerId=[0-9]{3,7}$"
 16,5,http://www.foxsports.com/fantasy/football/commissioner/Research/Projections.aspx?page={$PgeID}&position={$PosID}&split=4&playerSearchStatus=1,week,html,1,1,NA
 17,6,http://www.fftoday.com/rankings/playerwkproj.php?Season={$Season}&GameWeek={$WeekNo}&LeaugeID=1&PosID={$PosID}&cur_page={$PgeID},week,html,2,11,"/stats/players/"""
-18,7,http://www.numberfire.com/nfl/fantasy/fantasy-football-projections/{$PosID},week,html,1,1,NA
+18,7,https://www.numberfire.com/nfl/fantasy/fantasy-football-projections/{$PosID},week,html,1,1,NA
 19,8,https://www.fantasypros.com/nfl/projections/{$PosID}.php,week,html,1,2,NA
 20,9,http://subscribers.footballguys.com/myfbg/myweeklycheatsheet.php?who={$SrcID}&pos={$PosID}&profile=0&week={$WeekNo},week,html,2,1,player-all-info.php?
 21,10,http://www.eatdrinkandsleepfootball.com/fantasy/projections/{$Season}/{$Pos}/,week,html,2,2,NA
@@ -34,3 +34,5 @@ urlID,siteID,siteUrl,urlPeriod,urlData,nameCol,whichTable,playerLinkString
 62,19,https://fantasydata.com/nfl-stats/fantasy-football-weekly-projections.aspx?fs=0&stype=-1&sn=0&scope=0&w=-1&ew=-1&s=&t=0&p={$Pos}&st=FantasyPoints&d=1&ls=FantasyPoints&live=false&pid=false&minsnaps=4,season,html,2,1,NA
 63,20,/PFF/PFF_{$Season}_{$WeekNo}_{$Pos}.csv,season,csv,2,1,NA
 64,20,/PFF/PFF_{$Season}_{$WeekNo}_{$Pos}.csv,week,csv,2,1,NA
+65,19,https://fantasydata.com/nfl-stats/fantasy-football-weekly-projections.aspx?fs=0&stype=0&sn=0&scope=1&w={$WeekNo}&ew={$WeekNo}&s=&t=0&p={$PosID}&st=FantasyPoints&d=1&ls=&live=false&pid=false&minsnaps=4,week,html,2,1,NA
+66,21,https://www.fleaflicker.com/nfl/leaders?statType=7&sortMode=1&position={$PosID}&tableOffset={$PgeID},week,html,1,1,NA
