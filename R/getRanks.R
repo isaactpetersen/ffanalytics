@@ -85,9 +85,9 @@ getRanks <- function(rank.position = "consensus", leagueType = "std", weekNo = 0
                   "numeric", "numeric")
     }
     else {
-      cNames <- c("ecrRank", "player", "opp", "bestRank", "worstRank",
+      cNames <- c("ecrRank", "WSIS",  "player", "opp", "bestRank", "worstRank",
                   "avgRank", "sdRank")
-      cTypes <- c("numeric", "character", "character","numeric", "numeric",
+      cTypes <- c("numeric", "character", "character", "character","numeric", "numeric",
                   "numeric", "numeric")
     }
   }
