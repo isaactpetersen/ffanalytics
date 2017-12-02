@@ -7,7 +7,7 @@
 #' \link{scoringRules} for reference on format
 #' @param avgType Which average to use. Should be one of \code{average, robust, weighted}
 #' @export projectPoints
-projectPoints <- function(projectionData, scoringRules, avgType = "average"){
+projectPoints <- function(projectionData, scoringRules, avgType = "average", d.thresholds){
 
 
   sourcePoints <- calculatePoints(projectionData, scoringRules)
@@ -36,7 +36,8 @@ projectPoints <- function(projectionData, scoringRules, avgType = "average"){
   projectedPoints <- merge(projectedPoints, confInterval, by = c("playerId", "position"))
   projectedPoints[, positionRank := rank(-points, ties.method = "min"), by = "position"]
   projectedPoints[, dropoff := dropoffValue(points), by = "position"]
-  projectedPoints[, tier := tierFunction(playerId, points, sourcePoints, unlist(.BY))$tier, by = "position"]
+  projectedPoints[, tier := tierFunction(playerId, points, sourcePoints, unlist(.BY),
+                                         d.thresholds[unlist(.BY)])$tier, by = "position"]
   return(list(pointsTable = projectedPoints[order(-points)], avgStats = avgProjections))
 }
 
