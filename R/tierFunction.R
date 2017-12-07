@@ -1,5 +1,5 @@
 #' @export tierFunction
-tierFunction <- function(player_id, points, srcpoints, pos){
+tierFunction <- function(player_id, points, srcpoints, pos, d.threshold){
   cohens_d <- function(x, y, na.rm = TRUE) {
     if(na.rm){
       x <- x[!is.na(x)]
@@ -11,7 +11,6 @@ tierFunction <- function(player_id, points, srcpoints, pos){
     common.sd <- sqrt((n.x * var(x) + n.y * var(y))/(n.x + n.y))
     return(mean.diff/common.sd)
   }
-  d.threshold <- tierDValues[[pos]]
   tier <- rep(NA, length(points))
   tierNum <- 1
   dValue <- rep(NA, length(points))

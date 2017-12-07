@@ -9,6 +9,9 @@
 #' @param vorBaseline The numbers (position rank values or point values) at each position to use for the baseline when
 #' calculating VOR.
 #' @param vorType Whether the baseline numbers are ranks or points. Defaults to position ranks.
+#' @param d.thresholds Named vector containing Cohen's d thresholds for each position to create player tiers.
+#' Higher d values result in fewer tiers, while lower d values result in more tiers. Suggested values lie
+#' within the range 0.2 <= d <= 2. Defaults to tierDValues, whereby d = 1 for all positions.
 #' @param teams Number of teams in the league (integer).
 #' @param format League format ("standard" for standard leagues or "ppr" for Point-Per-Reception leagues).
 #' @param mflMocks Whether to include mock drafts from MyFantasyLeague.com (MFL). Set to 1 to use only mock drafts,
@@ -21,7 +24,8 @@
 #' getProjections(scrapeData,                    ## Based on data in scrapeData
 #'                avgMethod = "weighted",        ## calculate the projections using a weighted average
 #'                leagueScoring = scoringRules,  ## using defined scoringRules,
-#'                vorBaseline, vorType,          ## VOR Baselines and types
+#'                vorBaseline, vorType,          ## VOR Baselines, VOR types,
+#'                d.thresholds = tierDValues,    ## and Cohen's d threshold
 #'                teams = 12, format = "ppr",    ## for a 12 team ppr league
 #'                mflMocks = 0, mflLeagues = 0,  ## using only real MFL redraft league
 #'                adpSources =  c("FFC", "MFL")) ## and ADP data from MFL and FFC
@@ -30,6 +34,7 @@ getProjections <- function(scrapeData = NULL,
                            avgMethod = "average",
                            leagueScoring = scoringRules,
                            vorBaseline, vorType,
+                           d.thresholds = tierDValues,
                            teams = 12, format = "standard", mflMocks = NULL,
                            mflLeagues = NULL,
                            adpSources =  c("CBS", "ESPN", "FFC", "MFL", "NFL"),
@@ -127,7 +132,7 @@ getProjections <- function(scrapeData = NULL,
 
   # Calculate Points, Confidence intervals, standard deviation, and position ranks
   cat("Calculating Points                                                   \r")
-  projectedPoints <- projectPoints(allProjections, leagueScoring, avgType = avgMethod)
+  projectedPoints <- projectPoints(allProjections, leagueScoring, avgType = avgMethod, d.thresholds)
   avgProjections <- projectedPoints$avgStats
   projectedPoints <- projectedPoints$pointsTable
   # If seasonal data then we will calculate Value Over Replacement. We also
