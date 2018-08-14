@@ -1,3 +1,8 @@
+NOTE: PACKAGE IS OUTDATED PLEASE USE PACKAGE AT: https://github.com/FantasyFootballAnalytics/ffanalytics
+=========================
+
+
+
 ffanalytics R package by Fantasy Football Analytics
 =========================
 
