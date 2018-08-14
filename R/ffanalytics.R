@@ -36,5 +36,5 @@ NULL
   tierGroups <<- ffa.tierGroups
   tierDValues <<- c(QB = 1, RB = 1, WR = 1, TE = 1, K = 1, DST = 1, DL = 1, DB = 1, LB = 1)
   projDir <<- Sys.getenv("HOME")
-  warning("Package is outdated. Please install new version from 'https://github.com/FantasyFootballAnalytics/ffanalytics'")
+  warning("Package is outdated. Please install new version from 'https://github.com/FantasyFootballAnalytics/ffanalytics'", call. = FALSE)
 }
